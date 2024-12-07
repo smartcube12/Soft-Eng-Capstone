@@ -15,7 +15,7 @@
 }
 
 .info-section {
-    background-color: #193C6E;
+    background-color: rgb(105, 105, 105);
     color: white;
 }
 
@@ -148,4 +148,8 @@ body {
 .checkbox {
     margin-bottom: 1rem;
     text-align: center; /* Center the checkbox text */
+}
+
+img {
+    height: 200px;
 }
