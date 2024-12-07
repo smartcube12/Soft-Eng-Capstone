@@ -19,11 +19,7 @@ const LoginRegisterPage: React.FC = () => {
             <div className="info-section">
                 <div className="info-content">
                     <h2>VOTER INFORMATION</h2>
-                    <p>**placeholder**</p>
-                    <p>**placeholder**</p>
-                    <p>**placeholder**</p>
-                    <p>**placeholder**</p>
-                    <p>**placeholder**</p>
+                    <img src="/images/VoteNebraska.svg" alt="My Photo"/>
                     <button className="info-button" onClick={() => navigate('/voter-information')}>
                         Already Registered?
                     </button>
