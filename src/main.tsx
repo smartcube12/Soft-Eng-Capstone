@@ -3,8 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import LoginRegisterPage from './LoginAndRegister';
 import VoterInformationPage from './VoterInformationPage';
-import VotingBallotPage from './VotingBallotPage';
+import VotingBallotPage from './VotingBallotPage.tsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import SearchVoter from './SearchVoter.tsx';
+import VoterResults from './VoterResults.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
@@ -13,6 +15,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
                 <Route path="/" element={<LoginRegisterPage />} />
                 <Route path="/voter-information" element={<VoterInformationPage />} />
                 <Route path="/voting-ballot" element={<VotingBallotPage />} />
+                <Route path="/search-voter" element={<SearchVoter />} />
+                <Route path="/voter-results" element={<VoterResults />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
