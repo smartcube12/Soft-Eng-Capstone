@@ -26,7 +26,7 @@ const SearchVoter: React.FC = () => {
                     Date of Birth:
                     <input type="date" required />
                 </label>
-                <button className="my-search-button" onClick={() => navigate('/voter-results')}>
+                <button type="submit" className="my-search-button">
                     Search
                 </button>
             </form>
