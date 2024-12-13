@@ -23,6 +23,9 @@ const LoginRegisterPage: React.FC = () => {
                     <button className="info-button" onClick={() => navigate('/voter-information')}>
                         Already Registered?
                     </button>
+                    <button className="poll-button" onClick={() => navigate('/live-poll')}>
+                    Live Poll
+                </button>
                 </div>
             </div>
             <div className="form-section">
