@@ -7,6 +7,7 @@ import VotingBallotPage from './VotingBallotPage.tsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchVoter from './SearchVoter.tsx';
 import VoterResults from './VoterResults.tsx';
+import LivePoll from './LivePoll.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <React.StrictMode>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
                 <Route path="/voting-ballot" element={<VotingBallotPage />} />
                 <Route path="/search-voter" element={<SearchVoter />} />
                 <Route path="/voter-results" element={<VoterResults />} />
+                <Route path="/live-poll" element={<LivePoll />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
