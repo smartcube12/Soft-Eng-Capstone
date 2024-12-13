@@ -16,12 +16,12 @@ const LivePoll: React.FC = () => {
         Judge2:0,
         Mayor1:0,
         Mayor2:0,
-        Measure1_1:0,
-        Measure1_2:0,
-        Measure2_1:0,
-        Measure2_2:0,
-        Measure3_1:0,
-        Measure3_2:0,
+        Measure1_For:0,
+        Measure1_Against:0,
+        Measure2_For:0,
+        Measure2_Against:0,
+        Measure3_For:0,
+        Measure3_Against:0,
         President1:0,
         President2:0, 
         Senate1:0,
@@ -31,7 +31,7 @@ const LivePoll: React.FC = () => {
 
     return (
         <div className="my-poll-container">
-            <button className="back-button" onClick={() => navigate('/voter-information')}>
+            <button className="back-button" onClick={() => navigate('/')}>
                 Back to Search
             </button>
             <h2>Live Poll</h2>
