@@ -1,0 +1,81 @@
+/* Container for the entire poll */
+.my-poll-container {
+    width: 600px;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Poll choice container */
+  .my-choice {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Individual poll option */
+  .my-choice div {
+    background-color: #1f3ea4;
+    padding: 12px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .my-choice label {
+    font-size: 18px;
+    font-weight: bold;
+    color: #e8e8e8;
+  }
+  
+  .my-choice span {
+    font-size: 16px;
+    color: #555;
+    font-weight: normal;
+  }
+  
+  .my-choice div span {
+    margin-left: 10px;
+    background-color: #dcdcdc;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .back-button {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #7A1220;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+}
+
+  
