@@ -3,15 +3,44 @@ import './LoginAndRegister.css';
 import { useNavigate } from 'react-router-dom';
 
 const LoginRegisterPage: React.FC = () => {
-
     const navigate = useNavigate();
 
+    // State to store form data
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        idNumber: '',
+        city: '',
+        zipCode: '',
+    });
 
+    // Update state as the user types
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
 
-    const handleRegister = (e: React.FormEvent) => {
+    const handleRegister = async (e: React.FormEvent) => {
         e.preventDefault();
-        navigate('/voting-ballot');
-        
+        try {
+            // Send registration data to backend
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/Voter`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                console.log('Registration successful');
+                navigate('/voting-ballot'); // Redirect to the ballot page
+            } else {
+                console.error('Failed to register');
+            }
+        } catch (error) {
+            console.error('Error during registration:', error);
+        }
     };
 
     return (
@@ -23,6 +52,9 @@ const LoginRegisterPage: React.FC = () => {
                     <button className="info-button" onClick={() => navigate('/voter-information')}>
                         Already Registered?
                     </button>
+                    <button className="search-button" onClick={() => navigate('/search-voter')}>
+                    Search Voter
+                </button>
                     <button className="poll-button" onClick={() => navigate('/live-poll')}>
                     Live Poll
                 </button>
@@ -33,19 +65,46 @@ const LoginRegisterPage: React.FC = () => {
                     <div className="form-content">
                         <h2>REGISTER FORM</h2>
                         <div className="form-group">
-                            <input type="text" placeholder="First Name" required />
-                            <input type="text" placeholder="Last Name" required />
+                            <input 
+                                type="text" 
+                                name="firstName" 
+                                placeholder="First Name" 
+                                value={formData.firstName} 
+                                onChange={handleInputChange} 
+                                required 
+                            />
+                            <input 
+                                type="text" 
+                                name="lastName" 
+                                placeholder="Last Name" 
+                                value={formData.lastName} 
+                                onChange={handleInputChange} 
+                                required 
+                            />
                         </div>
-                        <input type="Text" placeholder="ID Number" required />
+                        <input 
+                            type="text" 
+                            name="idNumber" 
+                            placeholder="ID Number" 
+                            value={formData.idNumber} 
+                            onChange={handleInputChange} 
+                            required 
+                        />
                         <div className="form-group">
                             <input 
                                 type="text" 
+                                name="city" 
                                 placeholder="City" 
+                                value={formData.city} 
+                                onChange={handleInputChange} 
                                 required 
                             />
                             <input 
                                 type="number" 
+                                name="zipCode" 
                                 placeholder="Zip Code" 
+                                value={formData.zipCode} 
+                                onChange={handleInputChange} 
                                 required 
                             />
                         </div>
